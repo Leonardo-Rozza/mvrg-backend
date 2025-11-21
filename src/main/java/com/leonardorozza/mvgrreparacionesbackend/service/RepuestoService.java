@@ -19,6 +19,4 @@ public interface RepuestoService {
 
     void eliminar(Long id);
 
-
-
 }
