@@ -14,5 +14,5 @@ public interface EquipoMapper {
     Equipo toEntity(EquipoRequestDTO dto);
 
     @Mapping(target = "clienteId", source = "cliente.id")
-    EquipoResponseDTO toResponse(Equipo entity);
+    EquipoResponseDTO toDTO(Equipo entity);
 }

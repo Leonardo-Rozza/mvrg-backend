@@ -13,5 +13,5 @@ public interface ReparacionMapper {
     Reparacion toEntity(ReparacionRequestDTO dto);
 
     @Mapping(target = "equipoId", source = "equipo.id")
-    ReparacionResponseDTO toResponse(Reparacion entity);
+    ReparacionResponseDTO toDTO(Reparacion entity);
 }

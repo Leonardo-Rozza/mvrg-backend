@@ -12,8 +12,8 @@ public interface ClienteMapper {
 
     Cliente toEntity(ClienteRequestDTO dto);
 
-    ClienteResponseDTO toResponse(Cliente entity);
+    ClienteResponseDTO toDTO(Cliente entity);
 
-    List<ClienteResponseDTO> toResponseList(List<Cliente> entities);
+    List<ClienteResponseDTO> toDTOList(List<Cliente> entities);
 
 }
