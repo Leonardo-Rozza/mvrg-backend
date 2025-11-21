@@ -12,5 +12,4 @@ public interface ReparacionRepository extends JpaRepository<Reparacion, Long> {
 
     List<Reparacion> findByEstado(EstadoReparacion estado);
 
-
 }
