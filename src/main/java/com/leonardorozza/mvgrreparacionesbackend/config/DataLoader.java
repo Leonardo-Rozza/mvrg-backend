@@ -21,8 +21,8 @@ public class DataLoader implements CommandLineRunner {
         if (userRepository.count() == 0) {
 
             User admin = User.builder()
-                    .username("admin")
-                    .password(passwordEncoder.encode("admin123"))
+                    .username("AguanteBoca")
+                    .password(passwordEncoder.encode("SoyUnPutaso123!!"))
                     .email("admin@mvgr.com")
                     .role(UserRole.ADMIN)
                     .active(true)

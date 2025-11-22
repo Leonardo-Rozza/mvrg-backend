@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/reparaciones")
 @RequiredArgsConstructor
+@Tag(name = "Reparaciones", description = "Gestión de las reparaciones")
 public class ReparacionController {
 
     private final ReparacionService reparacionService;
@@ -51,7 +53,7 @@ public class ReparacionController {
     @PutMapping("/{id}")
     public ResponseEntity<ReparacionResponseDTO> actualizar(
             @PathVariable Long id,
-            @Valid @RequestBody ReparacionRequestDTO request) {
+            @RequestParam ReparacionRequestDTO request) {
 
         return ResponseEntity.ok(reparacionService.actualizar(id, request));
     }
@@ -67,7 +69,7 @@ public class ReparacionController {
     @PatchMapping("/{id}/estado")
     public ResponseEntity<ReparacionResponseDTO> cambiarEstado(
             @PathVariable Long id,
-            @RequestParam EstadoReparacion estado) {
+            @Valid @RequestBody EstadoReparacion estado) {
 
         return ResponseEntity.ok(reparacionService.cambiarEstado(id, estado));
     }
